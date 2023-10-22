@@ -212,6 +212,15 @@ func storeQuery(ds store.DelegatedStore) func(w http.ResponseWriter, r *http.Req
 Context propagation starts from the incoming HTTP request and go all the way until we hit the data store. This is very imporatant in distributed environment, as it helps us debug and visualize the function calls that span service/network boundaries.
 
 Logging and Metrics are also very important for running any production grade distributed system.
+------
+# Testing
+I have added some basic test to cover simple positive and negative test cases. They can be run by,
+```go
+go test -v
+```
+at the root of the project. Please ensure that your have `>=1.21.2` version of `go`.
+
+
 
 ------
 RBAC design thoughts
